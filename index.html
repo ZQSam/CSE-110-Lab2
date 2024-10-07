@@ -44,7 +44,8 @@
             <select id="label" name="label">
                 <option value="personal">Personal</option>
                 <option value="work">Work</option>
-                <option value="event">E</option>
+                <option value="study">Study</option>
+                <option value="event">Event</option>
                 <option value="">--Please choose an option--</option>
             </select>
             <button type="submit">Submit</button>
@@ -54,6 +55,25 @@
 </div>
 
 <script>
+    document.getElementById("title").addEventListener("focus", function () {
+        this.style.backgroundColor = "#e0f7fa";  // Light blue background on focus
+    });
+
+    document.getElementById("title").addEventListener("blur", function () {
+        this.style.backgroundColor = "";  // Reset background on blur
+        if (this.value.length > 50) {
+            alert("Title cannot exceed 50 characters.")
+        }
+    });0
+
+    document.getElementById("content").addEventListener("focus", function () {
+        this.style.backgroundColor = "#e0f7fa";  // Light blue background on focus
+    });
+
+    document.getElementById("content").addEventListener("blur", function () {
+        this.style.backgroundColor = "";  // Reset background on blur
+    });
+
     document.getElementById("userForm").addEventListener("submit", function (event) {
         event.preventDefault();
 
